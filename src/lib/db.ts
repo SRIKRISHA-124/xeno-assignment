@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
+const DB_PATH = path.join(process.cwd(), 'reach-iq-db.json');
 
 // Types
 export interface Customer {
@@ -94,9 +95,18 @@ class LocalDB {
     }
   }
 
-  public save() {
-    fs.writeFileSync(DB_FILE_PATH, JSON.stringify(this.data, null, 2), 'utf-8');
+ public save() {
+  // Vercel deploy → skip JSON write
+  if (process.env.VERCEL) {
+    console.log("Vercel mode → skipping file write");
+    return;
   }
+
+  fs.writeFileSync(
+    DB_PATH,
+    JSON.stringify(this.data, null, 2)
+  );
+}
 
   private seed() {
     console.log("Seeding local database with 500 customers and 2000+ orders...");
