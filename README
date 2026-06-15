@@ -1,0 +1,87 @@
+# 🚀 ReachIQ — AI-Native Mini CRM
+
+ReachIQ is an AI-powered Customer Relationship Management system built for intelligent marketing automation. It enables marketers to create, execute, and analyze campaigns using natural language commands powered by AI.
+
+📌 Overview
+
+Traditional CRM systems require manual effort for segmentation, messaging, and campaign tracking.  
+ReachIQ solves this by introducing an **AI Campaign Agent** that transforms plain English instructions into fully executable marketing campaigns.
+
+ ✨ Features
+
+ 🤖 AI Campaign Agent
+- Create campaigns using natural language
+- Automatic customer segmentation
+- AI-generated personalized messages
+- Campaign scoring and reasoning
+
+🧠 Smart Audience Engine
+- Filters customers based on:
+  - City
+  - Spending behavior
+  - Inactivity period
+
+ 📊 Live Dashboard
+- Total revenue
+- Customer reach
+- Conversion rate
+- Active campaigns
+
+📡 Real-Time Campaign Tracking
+- Sent → Delivered → Opened → Clicked lifecycle
+- Live activity stream updates
+
+ 📋 Campaign History
+- Full audit logs
+- Audience segmentation details
+- Message templates used
+- Individual recipient tracking
+ 👥 Customer Module
+- 500+ realistic customer dataset
+- Advanced filtering system
+
+ 📈 Analytics Module
+- Funnel analysis
+- Channel performance comparison
+- City-wise engagement insights
+
+
+🏗️ Architecture
+
+- Frontend: Next.js (React-based UI)
+- Backend APIs: Next.js API Routes
+- AI Engine: Gemini 1.5 Flash
+- Data Layer:JSON-based storage (portable design)
+- Deployment:Vercel
+
+🔄 Workflow
+
+1. User enters campaign goal in natural language  
+2. AI (Gemini) generates:
+   - Audience segment
+   - Message template
+   - Channel recommendation
+3. Campaign is launched via API
+4. Channel Service simulates delivery
+5. CRM receives callbacks and updates UI in real time
+
+ ⚙️ API Structure
+
+- `/api/campaigns/launch` → Launch campaign
+- `/api/campaigns/history` → Campaign logs
+- `/api/customers` → Customer data
+- `/api/metrics` → Analytics data
+
+ 🧠 AI Integration
+
+ReachIQ uses structured prompting with Gemini:
+
+- Converts natural language → JSON workflow
+- Ensures consistent segmentation logic
+- Provides confidence scores & reasoning
+
+Fallback rule-based system ensures reliability when AI is unavailable.
+
+ 🚀 Deployment
+
+Deployed on Vercel:
